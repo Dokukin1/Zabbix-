@@ -41,7 +41,7 @@
 2. Приложите в файл README.md текст использованных команд в GitHub
 
 #### Ответ 
-1. ![img]
+1. ![img](https://github.com/Dokukin1/Zabbix-/blob/main/img/2023-04-26_16-19-56.png)
 2.  - apt install postgresql
   - wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb
   - dpkg -i zabbix-release_6.0-4+ubuntu22.04_all.deb
@@ -69,3 +69,21 @@
 2. Приложите в файл README.md скриншот лога zabbix agent, где видно, что он работает с сервером
 3. Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
 4. Приложите в файл README.md текст использованных команд в GitHub
+
+ ![img](https://github.com/Dokukin1/Zabbix-/blob/main/img/3.png)
+  ![img](https://github.com/Dokukin1/Zabbix-/blob/main/img/4.png)
+   ![img](https://github.com/Dokukin1/Zabbix-/blob/main/img/5.png)
+   
+   a. 
+#### wget https://repo.zabbix.com/zabbix/6.4/debian/pool/main/z/zabbix-release/zabbix-release_6.4-1+debian11_all.deb
+#### dpkg -i zabbix-release_6.4-1+debian11_all.deb
+#### apt update
+b. 
+#### apt install zabbix-agent2 zabbix-agent2-plugin-*
+c. 
+#### systemctl restart zabbix-agent2
+#### systemctl enable zabbix-agent2
+Насираиваем агент так, чтобы он принял подключение от сервера:
+#### sudo nano /etc/zabbix/zabbix_agent2.conf
+  ###Server=192.168.56.103 , 127.0.0.1
+  ###ServerActive=127.0.0.1 , 192.168.56.103
